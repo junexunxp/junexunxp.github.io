@@ -8,7 +8,7 @@
       this._characteristics = new Map();
     }
     connect() {
-      return navigator.bluetooth.requestDevice({filters:[{name:[ 'blehr_sensor' ]}]})
+      return navigator.bluetooth.requestDevice({filters:[{name:'blehr_sensor' }]})
       .then(device => {
         this.device = device;
         return device.gatt.connect();
