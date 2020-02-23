@@ -8,9 +8,10 @@
       this._characteristics = new Map();
     }
     connect() {
-      return navigator.bluetooth.requestDevice({filters: [{
-    name: 'blehr'
-  }]})
+      return navigator.bluetooth.requestDevice({
+        acceptAllDevices: true,
+        optionalServices: ['heart_rate']
+      })
       .then(device => {
         this.device = device;
         return device.gatt.connect();
