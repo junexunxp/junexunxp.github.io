@@ -10,7 +10,7 @@
     connect() {
       return navigator.bluetooth.requestDevice({
         acceptAllDevices: true,
-        optionalServices: ['battery_service']
+        optionalServices: ['battery_service', 'heart_rate']
       })
       .then(device => {
         this.device = device;
