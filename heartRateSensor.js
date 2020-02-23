@@ -10,8 +10,7 @@
     connect() {
       return navigator.bluetooth.requestDevice({filters: [{
     name: 'blehr'
-  }],
-  optionalServices: ['heart_rate']})
+  }]})
       .then(device => {
         this.device = device;
         return device.gatt.connect();
