@@ -9,8 +9,7 @@
     }
     connect() {
       return navigator.bluetooth.requestDevice({
-        acceptAllDevices: true,
-        optionalServices: ['heart_rate']
+        acceptAllDevices: true
       })
       .then(device => {
         this.device = device;
